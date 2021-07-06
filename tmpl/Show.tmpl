@@ -1,0 +1,11 @@
+{{ define "Show" }}
+    {{template "Header" }}
+    {{ template "Menu" }}
+
+
+    <h2> Registro {{ .Id }} </h2>
+        <p>Descricao: {{ .Descricao }}</p>
+        <p>Data/Hora: {{ .DataHora }}</p>
+        <br /> <a href="/edit?id={{ .Id }}">Editar</a></p><a href="/delete?id={{ .Id }}">Deletar</a>
+    {{ template "Footer" }}
+{{ end }}

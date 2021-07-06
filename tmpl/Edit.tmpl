@@ -1,0 +1,14 @@
+{{ define "Edit" }}
+    {{ template "Header" }}
+        {{ template "Menu" }}
+        <h2>Editar Compromisso</h2>
+
+        <form method="POST" action="update">
+            <input type="hidden" name="uid" value="{{ .Id }}" />
+            <label> Descricao </label><input  type="text" name="descricao" value="{{ .Descricao }}" />
+            <label> Data/Hora </label><input  type="text" name="data_hora" value="{{ .DataHora }}" />
+            <input type="submit" value="Save appointment" />
+        </form><br />
+        <a href="/delete?id={{ .Id }}">Deletar</a>
+    {{ template "Footer" }}
+{{ end }}

@@ -1,0 +1,27 @@
+{{ define "Index" }}
+    {{ template "Header" }}
+        {{ template "Menu" }}
+    
+    <h2>Compromissos Cadastrados | host: {{ .ShowHname }} </h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Descricao</td>
+                <td>Data e Hora</td>
+                <td>Acao</td>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range . }}
+            <tr>
+                <td>{{ .Id }}</td>
+                <td>{{ .Descricao }}</td>
+                <td>{{ .DataHora }}</td>
+                <td><a href="/show?id={{ .Id }}">Visualizar</a> | <a href="/edit?id={{ .Id}}">Editar</a></td>
+            </tr>
+            {{ end }}
+        </tbody>
+    </table>
+    {{ template "Footer" }}
+{{ end }}

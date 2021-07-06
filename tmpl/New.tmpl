@@ -1,0 +1,12 @@
+{{ define "New" }}
+    {{ template "Header"}}
+        {{ template "Menu"}}
+        <h2>Novo Compromisso</h2>
+
+        <form method="POST" action="insert">
+            <label> Descricao </label><input type="text" name="descricao" /><br />
+            <label> Data/Hora </label><input type="text" name="data_hora" /><br />
+            <input type="submit" value="Save appointment" />
+        </form>
+    {{ template "Footer"}}
+{{ end }}
